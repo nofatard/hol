@@ -24,8 +24,8 @@ pipeline {
       steps {
         script {
           checkout scm
-          docker.withRegistry('', 'dockerUserID') {
-          def customImage = docker.build("nofatard/devops-pipeline:${env.BUILD_ID}")
+          docker.withRegistry('', 'DockerRegistryID') {
+          def customImage = docker.build("nofatard/hol-pipeline:${env.BUILD_ID}")
           customImage.push()
           }
     }
