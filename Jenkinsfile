@@ -25,7 +25,7 @@ pipeline {
         script {
           checkout scm
           docker.withRegistry('', 'DockerID') {
-          def customImage = docker.build("nofatard/hol-pipeline:${env.BUILD_ID}")
+          def customImage = docker.build("nofatard/holly-pipeline:${env.BUILD_ID}")
           customImage.push()
           }
     }
